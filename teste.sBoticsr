@@ -1,0 +1,4 @@
+inicio
+    frente(300)
+    esperar(2000)
+fim
