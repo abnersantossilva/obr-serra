@@ -1,0 +1,48 @@
+
+inicio
+
+# frente
+enquanto (verdadeiro) farei{
+se (luz(2) > 40 e luz(4) > 40 e luz(3) < 40 e luz(1) > 40 e luz(5) >40) entao { 
+frente(50) }
+
+# curva esquerda
+senao se (luz(4) < 40 ) 
+entao{ 
+esquerda(200)}
+
+senao se (luz(5) < 40 ) 
+entao{ 
+esquerda(200)}
+
+
+# curva direita
+ senao se(luz(2) < 40) 
+entao{
+ direita(200)}
+
+senao se(luz(1) < 40) 
+entao{
+ direita(200)}
+
+# curva 90 E
+se (luz(5) < 40 e luz(3) < 40) entao{ 
+esperar(1000)
+frente(65)
+esperar(750)
+esquerda(260) 
+esperar(5700) 
+tras(35) 
+esperar(300)} 
+
+
+#curva 90 D
+senao se (luz(1) < 40 e luz(3) < 40) entao{
+frente(65) 
+esperar(750) 
+direita(260) 
+esperar(5700) 
+tras(35) 
+esperar(300)}
+}
+fim

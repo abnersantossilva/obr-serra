@@ -1,0 +1,82 @@
+
+tarefa desvio{
+
+se (ultra(3)<15) entao{
+tras(60)
+esperar(500)
+direita(1000)
+esperar(2100)
+frente(100)
+esperar(2000)
+esquerda(1000)
+esperar(2100)
+frente(100)
+esperar(3350)
+esquerda(1000)
+esperar(2520)
+frente(150)
+esperar(1000)
+direita(1000)
+esperar(2100)
+tras(60)
+esperar(500)}
+}
+tarefa seguidor{
+
+# frente
+
+se (luz(2) > 40 e luz(4) > 40 e luz(3) < 40 e luz(1) > 40 e luz(5) >40) entao { 
+frente(75) }
+
+# curva esquerda
+senao se (luz(4) < 40 ) 
+entao{ 
+esquerda(200)}
+
+senao se (luz(5) < 40 ) 
+entao{ 
+esquerda(200)}
+
+
+# curva direita
+ senao se(luz(2) < 40) 
+entao{
+ direita(200)}
+
+senao se(luz(1) < 40) 
+entao{
+ direita(200)}
+
+# curva 90 E
+se (luz(5) < 40 e luz(3) < 40) entao{ 
+esperar(1000)
+frente(65)
+esperar(750)
+esquerda(260) 
+esperar(5700) 
+tras(35) 
+esperar(300)} 
+
+
+#curva 90 D
+senao se (luz(1) < 40 e luz(3) < 40) entao{
+frente(65) 
+esperar(750) 
+direita(260) 
+esperar(5700) 
+tras(35) 
+esperar(300)}
+}
+
+
+inicio
+levantar(8000)
+
+enquanto(verdadeiro) farei{
+se (ultra(3) < 15) entao{
+desvio()}
+se (ultra(3) > 15) entao{
+seguidor()}}
+
+
+fim

@@ -1,0 +1,52 @@
+tarefa vitima{
+se ( cor(6) == "PRETO") entao{
+
+	tras(100)
+	esperar(500)
+	direita(1500)
+	esperar(3560)
+	se (ultra(3) > 10) entao{
+		frente(120)
+	}
+	se (ultra(3) < 10) entao{
+		se (ultra(1) > 20) entao{ 
+			tras(80)
+			esperar(450)
+			baixar(5800)
+			frente(130)
+			esperar(400)
+			levantar(3600)
+		}	
+ 
+		senao {
+  			direita(1500)
+			esperar(3560)	
+		}
+	}	
+}}
+
+inicio
+levantar(7000)
+enquanto(verdadeiro) farei{ 
+	se (ultra(1) > 73) entao{ 
+	frente(100)
+	}
+	se (ultra(1) < 73 ) entao {
+		se ( cor(6) == "PRETO") entao{
+		vitima()
+		}
+
+		se ( subtrair(ultra(1), ultra(3)) >30) entao{
+		vitima()
+		}
+
+		senao{
+		frente(200)
+		esperar (960)
+		direita(1500)
+		esperar(3560)
+		}
+	}
+}
+
+fim

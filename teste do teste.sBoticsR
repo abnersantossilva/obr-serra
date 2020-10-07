@@ -1,0 +1,14 @@
+inicio
+enquanto(verdadeiro) farei{ 
+se (ultra(1) > 73) entao{ 
+frente(100)}
+se (ultra(1) < 73 e subtrair(ultra(1), ultra(3)) >20) entao {
+escrever(1, "achei")}
+senao{
+frente(200)
+esperar (500)
+direita(1500)
+esperar(3000)
+}}
+
+fim

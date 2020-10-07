@@ -1,0 +1,74 @@
+numero baratinha = 0
+
+tarefa vitima{
+	
+
+	tras(100)
+	esperar(800)
+	direita(1500)
+	esperar(3500)
+         
+	
+	enquanto(verdadeiro) farei{
+	
+	
+	se (temalgo(3,0,115) e subtrair(ultra(1), ultra(3)) > 10) entao{
+		 
+		tras(80)
+		esperar(250)
+		parar()
+		baixar(4800)
+		frente(200)
+		esperar(1800)
+		parar()
+		levantar(3300)
+		
+		}	
+ 
+	senao se (ultra(3) > 10 e cor(6) == "BRANCO") entao{
+  		para baratinha de 1 ate 4 passo 1  farei {
+			frente(200)
+			esperar(1000)
+			direita(1500)
+			esperar(3580)
+		}
+		para baratinha de 5 ate 8 passo 1  farei {
+			frente(200)
+			esperar(2000)
+			direita(1500)
+			esperar(3550)
+		}
+	}
+	se (cor(6) == "PRETO") entao{
+		frente(50)
+		esperar(200)
+		baixar(3800)
+	}
+	}
+}
+
+inicio
+levantar(7000)
+enquanto(verdadeiro) farei{ 
+	se (ultra(1) > 73) entao{ 
+	frente(100)
+	}
+	se (ultra(1) < 73 ) entao {
+		se ( cor(6) == "PRETO") entao{
+		vitima()
+		}
+
+		se ( subtrair(ultra(1), ultra(3)) >30) entao{
+		vitima()
+		}
+
+		senao{
+		frente(200)
+		esperar (960)
+		direita(1500)
+		esperar(3500)
+		}
+	}
+}
+
+fim
