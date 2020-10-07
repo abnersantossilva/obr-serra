@@ -1,5 +1,3 @@
 inicio
-    frente(300)
-    esperar(2000)
-    tras(300)
+     tras(300)
 fim
