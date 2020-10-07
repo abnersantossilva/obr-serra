@@ -2,88 +2,88 @@ numero baratinha = 0
 
 tarefa vitima{
 	tras(100)
-	esperar(1000)
+	esperar(500)
 	direita(1500)
 	esperar(3400)
  	parar()
 	esperar(200)
-	enquanto(verdadeiro) farei{
-  		para baratinha de 1 ate 3 passo 1  farei {
+	para baratinha de 1 ate 3 passo 1  farei {
+		se (temalgo(3,0,80) e subtrair(ultra(1), ultra(3)) > 10) entao{ 
+			tras(80)
+			esperar(500)
+			parar()
+			baixar(4800)
+			frente(200)
+			esperar(1800)
+			parar()
+			levantar(3300)
+			tras(200)
+			esperar(1800)
+		}senao{
+			frente(200)
+			esperar(1200)
+			direita(1500)
+			esperar(3500)
+		}
+	}
+	para baratinha de 3 ate 4 passo 1  farei {
+		frente(200)
+		esperar(1000)
+		direita(1500)
+		esperar(2000)
+		frente(100)
+		esperar(800)
+	}
+	para baratinha de 5 ate 7 passo 1  farei {
+		se (temalgo(3,0,80) e subtrair(ultra(1), ultra(3)) > 10) entao{ 
+			tras(80)
+			esperar(500)
+			parar()
+			baixar(4800)
+			frente(200)
+			esperar(1800)
+			parar()
+			levantar(3300)
+			tras(200)
+			esperar(1800)
+		}senao{
 			frente(200)
 			esperar(2000)
 			direita(1500)
-			esperar(3590)
-			se (temalgo(3,0,60))  entao{
-				tras(80)
-				esperar(500)
-				parar()
-				baixar(4800)
-				frente(200)
-				esperar(1800)
-				parar()
-				levantar(3300)
-				tras(200)
-				esperar(1800)
-			}
+			esperar(3520)
 		}
-		para baratinha de 3 ate 4 passo 1  farei {
+	}
+	para baratinha de 7 ate 8 passo 1  farei {
+		frente(200)
+		esperar(1500)
+		direita(1500)
+		esperar(2000)
+		frente(100)
+		esperar(1300)
+	}
+	para baratinha de 9 ate 11 passo 1  farei {
+		se (temalgo(3,0,80) e subtrair(ultra(1), ultra(3)) > 10) entao{ 
+			tras(80)
+			esperar(500)
+			parar()
+			baixar(4800)
 			frente(200)
-			esperar(1000)
-			direita(1500)
-			esperar(2000)
-			frente(100)
-			esperar(800)
-		}
-		para baratinha de 5 ate 7 passo 1  farei {
+			esperar(1800)
+			parar()
+			levantar(3300)
+			tras(200)
+			esperar(1800)
+		}senao{
 			frente(200)
 			esperar(2800)
 			direita(1500)
-			esperar(3590)
-			se (temalgo(3,0,60) e subtrair(ultra(1), ultra(3)) > 10) entao{ 
-				tras(80)
-				esperar(500)
-				parar()
-				baixar(4800)
-				frente(200)
-				esperar(1800)
-				parar()
-				levantar(3300)
-				tras(200)
-				esperar(1800)
-			}
+			esperar(3520)
 		}
-		para baratinha de 7 ate 8 passo 1  farei {
-			frente(200)
-			esperar(1500)
-			direita(1500)
-			esperar(2000)
-			frente(100)
-			esperar(1300)
-		}
-		para baratinha de 9 ate 11 passo 1  farei {
-			frente(200)
-			esperar(3600)
-			direita(1500)
-			esperar(3590)
-			se (temalgo(3,0,60) e subtrair(ultra(1), ultra(3)) > 10) entao{ 
-				tras(80)
-				esperar(500)
-				parar()
-				baixar(4800)
-				frente(200)
-				esperar(1800)
-				parar()
-				levantar(3300)
-				tras(200)
-				esperar(1800)
-			}
-		}
-		frente(50)
-		esperar(200)
-		baixar(3800)
 	}
+	frente(50)
+	esperar(200)
+	baixar(3800)
 }
-
 inicio
 	levantar(7000)
 	enquanto(verdadeiro) farei{ 
