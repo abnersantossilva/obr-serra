@@ -3,62 +3,76 @@ numero distancia = 0
 booleano loop = verdadeiro
 booleano achouVitima = verdadeiro
 
-inicio 
+inicio
+    levantar(6000)
     enquanto (loop) farei {
         se(ultra(3) < 10) entao {
-            se(ultra(1) < 20) entao {
+            se(ultra(1) < 20 ou ultra(1) > 100) entao {
                 tras(150)
                 esperar(500)
                 direita(1000)
-                esperar(3450)
+                esperar(3400)
             } senao {
                 enquanto (loop) farei {
                     direita(1000)
-                    esperar(3450)
+                    esperar(3400)
                     enquanto (achouVitima) farei{
                         frente(150)
-                        se (ultra(1) > 5)entao{
-                            se (ultra(2) < 130) entao{
-                                parar()
-                                distancia = ultra(2) * 42
-                                direita(1000)
-                                esperar(3450)
-                                tras(100)
-                                esperar(1000)
-                                parar()
-                                baixar(5000)
-                                frente(125)
-                                esperar(distancia)
-                                frente(125)
-                                levantar(3700)
-                                distancia = distancia + 3700
-                                tras(125)
-                                esperar(distancia)
-                                direita(1000)
-                                esperar(3550)
-                                enquanto (loop) farei {
-                                    se(ultra(3) < 10) entao {
-                                        se(ultra(1) < 20) entao {
-                                            tras(150)
-                                            esperar(500)
-                                            direita(1000)
-                                            esperar(4000)
-                                        } senao {
-                                            parar()
-                                            baixar(3500)
-                                            achouVitima = falso
-                                            loop = falso
-                                        }
-                                    }senao{
-                                        frente(50)
-                                    }
+                        se (ultra(3) > 7 e ultra(2) < 130 )entao{
+                            parar()
+                            distancia = ultra(2) * 44
+                            direita(1000)
+                            esperar(3380)
+                            tras(100)
+                            esperar(1000)
+                            parar()
+                            baixar(7000)
+                            frente(125)
+                            esperar(distancia)
+                            frente(125)
+                            levantar(3700)
+                            distancia = distancia + 3700
+                            tras(125)
+                            esperar(distancia)
+                            direita(1000)
+                            esperar(3610)
+                            enquanto (loop) farei {
+                                se(ultra(3) < 10 e (ultra(1) < 20 ou ultra(1) > 100)) entao {  
+                                    tras(150)
+                                    esperar(500)
+                                    direita(1000)
+                                    esperar(4000)
+                                }senao se ( ultra(3) < 10 e (ultra(1) > 20 ou ultra(1) < 100) ) entao {
+                                    parar()
+                                    baixar(5000)
+                                    tras(300)
+                                    esperar(200)
+                                    frente(300)
+                                    esperar(300)
+                                    achouVitima = falso
+                                    loop = falso
                                 }
-                                
-                            }
+                                frente(50)
+                            }  
+                        } senao se (ultra(1) < 14 e ultra(3) < 7 ) entao{
+                            tras(150)
+                            esperar(500)
+                            direita(1000)
+                            esperar(3400)
+                        } senao se (ultra(1) > 14 e ultra(3) < 7 ) entao {
+                            tras(100)
+			                esperar(560)
+			                parar()
+			                baixar(4800)
+			                frente(100)
+			                esperar(2200)
+			                parar()
+			                levantar(3390)
+			                tras(100)
+			                esperar(1800)
                         }
                     }
                 }
-                 
             }
         }senao{
             frente(200)
