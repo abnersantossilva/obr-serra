@@ -1,4 +1,8 @@
-
+numero distanciaTriangulo = 0
+numero multiDistancia = 0
+numero distancia = 0
+booleano ciclo = verdadeiro
+booleano achouVitima = verdadeiro
 tarefa desvio{
 
 se (ultra(3)<15) entao{
@@ -136,7 +140,100 @@ se (ultra(3) > 15) entao{
 seguidor()}
 }
 se (ultra(2) < 35.5 e (inclinacao() < 345 e inclinacao() > 335)) entao{
-rampa()}
+rampa()
+levantar(6000)
+    enquanto (ciclo) farei {
+        se(ultra(3) < 10) entao {
+            se(ultra(1) < 20 ou ultra(1) > 100) entao {
+                tras(150)
+                esperar(500)
+                direita(1000)
+                esperar(3400)
+            } senao {
+                enquanto (ciclo) farei {
+                    se(achouVitima == verdadeiro) entao {
+                        direita(1000)
+                        esperar(3400)
+                    }
+                    achouVitima = verdadeiro
+                    enquanto (achouVitima) farei{
+                        frente(150)
+                        se (ultra(3) > 7 e ultra(2) < 130 )entao{
+                            parar()
+                            se(ultra(2) < 60) entao{
+                                multiDistancia = 42
+                            }senao {
+                                multiDistancia = 30
+                            }
+                            distancia = ultra(2) * multiDistancia
+                            direita(1000)
+                            esperar(3380)
+                            tras(100)
+                            esperar(1000)
+                            parar()
+                            baixar(7000)
+                            frente(125)
+                            esperar(distancia)
+                            frente(125)
+                            levantar(3700)
+                            distancia = distancia + 3700
+                            tras(125)
+                            esperar(distancia)
+                            direita(1000)
+                            esperar(3900)
+                            enquanto (achouVitima) farei {
+                                se(ultra(3) < 10 e (ultra(1) < 20 ou ultra(1) > 100)) entao {  
+                                    tras(150)
+                                    esperar(500)
+                                    direita(1000)
+                                    esperar(4000)
+                                }senao se ( ultra(3) < 10 e (ultra(1) > 20 ou ultra(1) < 100) ) entao {
+                                    se (ultra(1) < 42) entao{
+                                        direita(1000)
+                                        esperar(2000)
+                                    }
+                                    parar()
+                                    baixar(5000)
+                                    tras(300)
+                                    esperar(200)
+                                    frente(300)
+                                    esperar(350)
+                                    parar()
+                                    esperar(1200)
+                                    levantar(4000)
+                                    tras(100)
+                                    esperar(500)
+                                    esquerda(1000)
+                                    esperar(3800)
+                                    achouVitima = falso
+                                }
+                                frente(50)
+                            }  
+                        } senao se (ultra(1) < 14 e ultra(3) < 7 ) entao{
+                            tras(150)
+                            esperar(500)
+                            direita(1000)
+                            esperar(3400)
+                        } senao se (ultra(1) > 14 e ultra(3) < 7 ) entao {
+                            tras(100)
+			                esperar(560)
+			                parar()
+			                baixar(4800)
+			                frente(100)
+			                esperar(2200)
+			                parar()
+			                levantar(3390)
+			                tras(100)
+			                esperar(1800)
+                        }
+                    }
+                }
+            }
+        }senao{
+            frente(200)
+        }
+    }
+}
 
 
 fim
