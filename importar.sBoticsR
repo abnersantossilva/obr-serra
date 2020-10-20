@@ -25,6 +25,7 @@ levantar(6000)
                     enquanto (achouVitima) farei{
                         frente(150)
                         se (ultra(3) > 7 e ultra(2) < 130 )entao{
+                            escrever(3, "ja chega")
                             parar()
                             se(ultra(2) < 60) entao{
                                 multiDistancia = 42
@@ -69,7 +70,7 @@ levantar(6000)
                                     levantar(4000)
                                     tras(100)
                                     esperar(500)
-                                    esquerda(1000)
+                                    direita(1000)
                                     esperar(3800)
                                     achouVitima = falso
                                 }
@@ -81,7 +82,7 @@ levantar(6000)
                             direita(1000)
                             esperar(3400)
                         } senao se (ultra(1) > 14 e ultra(3) < 7 ) entao {
-                            tras(100)
+                            tras(130)
 			                esperar(560)
 			                parar()
 			                baixar(4800)
@@ -103,145 +104,157 @@ levantar(6000)
 
 tarefa desvio{
 
-se (ultra(3)<15) entao{
-tras(60)
-esperar(500)
-direita(1000)
-esperar(2100)
-frente(100)
-esperar(2000)
-esquerda(1000)
-esperar(2100)
-frente(100)
-esperar(2550)
-esquerda(1000)
-esperar(2520)
-frente(150)
-esperar(1000)
-direita(1000)
-esperar(2100)
-tras(60)
-esperar(500)}
+    se (ultra(3)<10) entao{
+        tras(90)
+        esperar(500)
+        direita(1000)
+        esperar(2100)
+        frente(100)
+        esperar(2000)
+        esquerda(1000)
+        esperar(2100)
+        frente(100)
+        esperar(2550)
+        esquerda(1000)
+        esperar(2520)
+        enquanto (luz(5) > 40) farei{
+            frente(120)
+        }
+        frente(100)
+        esperar(950)
+        direita(1000)
+        esperar(2400)
+        tras(75)
+        esperar(500)
+    }
 }
 tarefa seguidor{
 
-# frente
+    # frente
 
-se (luz(2) > 40 e luz(4) > 40 e luz(3) < 40 e luz(1) > 40 e luz(5) >40) entao { 
-frente(120) }
+    se (luz(2) > 40 e luz(4) > 40 e luz(3) < 40 e luz(1) > 40 e luz(5) >40) entao { 
+        frente(120) 
+    }
 
-# curva esquerda
-senao se (luz(4) < 40 ) 
-entao{ 
-esquerda(200)}
+    # curva esquerda
+    senao se (luz(4) < 40 ) entao{ 
+        esquerda(200)
+    }
 
-senao se (luz(5) < 40 ) 
-entao{ 
-esquerda(200)}
-
-
-# curva direita
- senao se(luz(2) < 40) 
-entao{
- direita(200)}
-
-senao se(luz(1) < 40) 
-entao{
- direita(200)}
-
-# curva 90 E
-se (luz(5) < 40 e luz(3) < 40) entao{ 
-esperar(1000)
-frente(80)
-esperar(750)
-esquerda(1000) 
-esperar(2850) 
-tras(35) 
-esperar(300)} 
+    senao se (luz(5) < 40 ) entao{ 
+        esquerda(200)
+    }
 
 
-#curva 90 D
-senao se (luz(1) < 40 e luz(3) < 40) entao{
-frente(80) 
-esperar(750) 
-direita(1000) 
-esperar(2850) 
-tras(35) 
-esperar(300)}
+    # curva direita
+    senao se(luz(2) < 40) entao{
+        direita(200)
+    }
 
-#verde direita
-se(cor(2) == "VERDE") entao{
-frente(80)
-esperar(900)
-direita(800)
-esperar(2000)
-tras(40)
-esperar(200)}
+    senao se(luz(1) < 40) entao{
+        direita(200)
+    }
 
-#verde esquerda
-senao se(cor(4) == "VERDE") entao{
-frente(80)
-esperar(900)
-esquerda(800)
-esperar(2000)
-tras(40)
-esperar(200)}
+    # curva 90 E
+    se (luz(5) < 40 e luz(3) < 40) entao{ 
+        esperar(1000)
+        frente(100)
+        esperar(750)
+        esquerda(1000) 
+        esperar(2850) 
+        tras(50) 
+        esperar(300)
+    } 
+
+
+    #curva 90 D
+    senao se (luz(1) < 40 e luz(3) < 40) entao{
+        frente(100) 
+        esperar(750) 
+        direita(1000) 
+        esperar(2850) 
+        tras(50) 
+        esperar(300)
+    }
+
+    #verde direita
+    se(cor(2) == "VERDE") entao{
+        frente(120)
+        esperar(900)
+        direita(1000)
+        esperar(2250)
+        tras(50)
+        esperar(200)
+    }
+
+    #verde esquerda
+    senao se(cor(4) == "VERDE") entao{
+        frente(120)
+        esperar(900)
+        esquerda(1000)
+        esperar(2250)
+        tras(50)
+        esperar(200)
+    }
 }
 
 tarefa rampa{
-baixar(3000)
+    baixar(3000)
 
-se(ultra(2) > 36 e inclinacao() < 50) entao{
-tras(100)
-esperar(1000000)}
+    se (ultra(2) < 35.5 e (inclinacao() > 335)) entao{
 
-senao se (ultra(2) < 35.5 e (inclinacao() < 345 e inclinacao() > 335)) entao{
+        enquanto(ultra(2) < 35.5 ) farei{
 
+            se (luz(2) > 40 e luz(4) > 40 e luz(3) < 40 e luz(1) > 40 e luz(5) >40) entao { 
+                frente(75) 
+            }
 
-enquanto(ultra(2) < 35.5 e (inclinacao() < 345 e inclinacao() > 335)) farei{
+            # curva esquerda
+            senao se (luz(4) < 40 ) entao{ 
+                esquerda(200)
+            }
 
+            senao se (luz(5) < 40 ) entao{ 
+                esquerda(200)
+            }
 
-se (luz(2) > 40 e luz(4) > 40 e luz(3) < 40 e luz(1) > 40 e luz(5) >40) entao { 
-frente(75) }
+            # curva direita
+            senao se(luz(2) < 40) entao{
+                direita(200)
+            }
 
-# curva esquerda
-senao se (luz(4) < 40 ) 
-entao{ 
-esquerda(200)}
-
-senao se (luz(5) < 40 ) 
-entao{ 
-esquerda(200)}
-
-
-# curva direita
- senao se(luz(2) < 40) 
-entao{
- direita(200)}
-
-senao se(luz(1) < 40) 
-entao{
- direita(200)}
-}}
+            senao se(luz(1) < 40) entao{
+                direita(200)
+            }
+        }
+    }
 }
 
 
 inicio
-levantar(7000)
+    levantar(6000)
+    
 
-enquanto(verdadeiro) farei{
-
-se (ultra(3) < 15) entao{
-desvio()}
-se (ultra(3) > 15) entao{
-seguidor()}
-se (ultra(2) < 35.5 e (inclinacao() < 345 e inclinacao() > 335)) entao{
-rampa()
-resgate()
-}
-}
-
-
-
-
+    enquanto(verdadeiro) farei{
+        escrevernumero(1, inclinacao())
+        se((cor(3) == "VERMELHO" ou cor(1) == "VERMELHO" ou cor(5) == "VERMELHO" ou cor(2) == "VERMELHO" ou cor(4) == "VERMELHO") e inclinacao() > 335) entao{
+            frente(100)
+            esperar(230)
+            escrever(2, "Hello World")
+            rampa()
+            resgate()
+        }
+        se (ultra(3) > 10) entao{
+            seguidor()
+        }
+        se (ultra(3) < 10) entao{
+            desvio()
+        }
+        se (ultra(2) < 35.5 e (inclinacao() > 335)) entao{
+            escrever(2, "Hello World")
+            rampa()
+            resgate()
+        }   
+        
+    }
 fim
